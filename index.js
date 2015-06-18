@@ -9,8 +9,8 @@ var createPreprocessor = function(args, config, logger, helper) {
 
   var options = helper.merge(defaultOptions, args.options || {}, config.options || {});
 
-  var replacer = args.replacer || config.replacer || function(filePath) {
-    return filePath;
+  var replacer = args.replacer || config.replacer || function(content) {
+    return content;
   };
 
   return function(content, file, done) {
