@@ -1,4 +1,4 @@
-var createTransformPathPreprocessor = function(args, config, logger, helper) {
+var createPreprocessor = function(args, config, logger, helper) {
   config = config || {};
 
   var log = logger.create('preprocessor.transformPath');
@@ -25,5 +25,5 @@ var createTransformPathPreprocessor = function(args, config, logger, helper) {
 createPreprocessor.$inject = ['args', 'config.transformPathPreprocessor', 'logger', 'helper'];
 
 module.exports = {
-  'preprocessor:transformPath': ['factory', createTransformPathPreprocessor]
+  'preprocessor:transformPath': ['factory', createPreprocessor]
 };
