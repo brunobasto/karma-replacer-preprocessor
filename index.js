@@ -1,7 +1,7 @@
 var createPreprocessor = function(args, config, logger, helper) {
   config = config || {};
 
-  var log = logger.create('preprocessor.transformPath');
+  var log = logger.create('preprocessor.replacer');
 
   var defaultOptions = {
     sourceMaps: false
@@ -9,21 +9,21 @@ var createPreprocessor = function(args, config, logger, helper) {
 
   var options = helper.merge(defaultOptions, args.options || {}, config.options || {});
 
-  var transformer = args.transformer || config.transformer || function(filePath) {
+  var replacer = args.replacer || config.replacer || function(filePath) {
     return filePath;
   };
 
   return function(content, file, done) {
     log.debug('Processing "%s".', file.originalPath);
 
-    file.path = transformer(file.originalPath);
+    var replacedContent = replacer(content);
 
-    return done(null, content);
+    return done(null, replacedContent);
   };
 };
 
-createPreprocessor.$inject = ['args', 'config.transformPathPreprocessor', 'logger', 'helper'];
+createPreprocessor.$inject = ['args', 'config.replacerPreprocessor', 'logger', 'helper'];
 
 module.exports = {
-  'preprocessor:transformPath': ['factory', createPreprocessor]
+  'preprocessor:replacer': ['factory', createPreprocessor]
 };

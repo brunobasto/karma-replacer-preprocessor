@@ -1,4 +1,4 @@
-Karma Transform Path
+Karma Replacer Preprocessor
 ====================
 
-A Karma plugin. Change the path of files served by karma.
+A Karma plugin. Replace things inside files served by karma.
