@@ -1,0 +1,18 @@
+{
+  "name": "karma-transform-path-preprocessor",
+  "version": "0.0.1",
+  "description": "A Karma plugin. Change the path of files served by karma.",
+  "main": "index.js",
+  "repository": "brunobasto/karma-transform-path-preprocessor",
+  "keywords": [
+    "karma-plugin",
+    "karma-preprocessor",
+    "replace",
+    "transform"
+  ],
+  "author": "Bruno Basto <bruno.basto@liferay.com>",
+  "peerDependencies": {
+    "karma": ">=0.11.14"
+  },
+  "license": "MIT"
+}
