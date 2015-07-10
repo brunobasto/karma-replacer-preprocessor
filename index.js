@@ -9,14 +9,14 @@ var createPreprocessor = function(args, config, logger, helper) {
 
   var options = helper.merge(defaultOptions, args.options || {}, config.options || {});
 
-  var replacer = args.replacer || config.replacer || function(content) {
+  var replacer = args.replacer || config.replacer || function(file, content) {
     return content;
   };
 
   return function(content, file, done) {
     log.debug('Processing "%s".', file.originalPath);
 
-    var replacedContent = replacer(content);
+    var replacedContent = replacer(file, content);
 
     return done(null, replacedContent);
   };
