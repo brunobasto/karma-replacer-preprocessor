@@ -1,6 +1,6 @@
 {
   "name": "karma-replacer-preprocessor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Karma plugin. Replace things inside files served by karma.",
   "main": "index.js",
   "repository": "brunobasto/karma-replacer-preprocessor",
